@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기획서 — 검사 기준서 작성 자동화</title>
+<meta name="robots" content="index,follow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.plan-figs figure{margin:0 0 22px;} .plan-figs img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff;}
+.plan-figs figcaption{font-size:13px;color:var(--sub);text-align:center;margin-top:6px;}
+.plan td{white-space:normal;} .plan td .btn{min-height:36px;white-space:nowrap;}
+h3{font-size:15px;margin:16px 0 6px;} main ul{margin:0 0 10px 20px;}
+:root{--ink:#152232;--sub:#5b6b7b;--line:#d8e0e8;--brand:#154b6e;--bg:#f5f7fa;--container-pad:20px}
+@media (min-width:640px){:root{--container-pad:28px}} @media (min-width:1024px){:root{--container-pad:40px}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Pretendard,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--brand)} .wrap,.topnav-inner{max-width:calc(1100px + 2*var(--container-pad));margin:0 auto;padding:0 var(--container-pad)}
+.topnav{background:#0d3350;color:#fff;position:sticky;top:0;z-index:5} .topnav-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;min-height:56px}
+.topnav-brand{color:#fff;text-decoration:none;font-weight:700} .topnav-brand small{font-weight:400;opacity:.75;margin-left:6px}
+.topnav-links{list-style:none;display:flex;gap:4px;margin:0;padding:0} .topnav-links a{color:#dbe7f0;text-decoration:none;padding:8px 12px;border-radius:8px;display:block} .topnav-links a.active,.topnav-links a:hover{background:rgba(255,255,255,.14);color:#fff}
+.hero{background:linear-gradient(180deg,#154b6e,#0d3350);color:#fff;padding:40px 0 36px} .hero h1{margin:6px 0 10px;font-size:clamp(24px,3.4vw,34px);color:#fff} .hero p{margin:0;opacity:.9;max-width:860px} .eyebrow{font-size:13px;opacity:.8}
+main{padding:28px 0 40px} .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 20px} .sub{color:var(--sub)}
+.tablewrap{overflow-x:auto} table{border-collapse:collapse;width:100%;font-size:14.5px} th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top} th{background:#eef3f7;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:6px 14px;border-radius:8px;border:1px solid var(--brand);text-decoration:none;font-weight:600} .btn.primary{background:var(--brand);color:#fff}
+footer{border-top:1px solid var(--line);padding:20px 0 28px;color:var(--sub);font-size:13.5px}
+</style>
+</head>
+<body>
+<nav class="topnav" aria-label="주요 메뉴">
+  <div class="topnav-inner">
+    <a class="topnav-brand" href="index.html">검사 기준서 작성 자동화 <small>data10-03 · 기획 황수용</small></a>
+    <ul class="topnav-links">
+      <li><a href="index.html">도구</a></li>
+      <li><a href="plan.html" class="active" aria-current="page">기획서</a></li>
+    </ul>
+  </div>
+</nav>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">현장 데이터 디지털화 전문가과정 · 2차수 · 프로젝트 03 · 기획서 v2.0</div>
+  <h1>검사 기준서 작성 자동화 기획서</h1>
+  <p>PDF 도면의 치수 · 공차 · 기하공차 · 용접 표기를 읽어 번호 풍선을 달거나 풍선별 정보를 기준서 양식 엑셀로 뽑고, 정답과 대조해 인식 일치율을 재는 도구입니다.</p>
+</div></header>
+<main><div class="wrap">
+<div class="card">
+  <h2 style="margin-top:0">기획서 내려받기</h2>
+  <p class="sub">파이프라인 · 아키텍처 · 와이어프레임 · 개발일지가 들어간 워드 문서입니다. 버전마다 따로 남깁니다.</p>
+  <div class="tablewrap plan"><table><thead><tr><th>버전</th><th>날짜</th><th>바뀐 점</th><th>파일</th></tr></thead><tbody><tr><td><b>v2.0</b></td><td>2026-11-10</td><td>최종 기획서 — 파이프라인 · 아키텍처 · 와이어프레임 정리 / 로그인 · 사용 신청 · 관리자 승인(요청자 Supabase 로 옮길 수 있게) / 로그인 전 대문</td><td><a class="btn primary" href="docs/기획서/data10-03_황수용_검사기준서작성자동화_기획서_v2.0.docx" download>워드 내려받기</a></td></tr></tbody></table></div>
+</div>
+<div class="card plan">
+  <h2 style="margin-top:0">요구사항과 구현</h2>
+  <div class="tablewrap"><table><thead><tr><th>기획서 요구</th><th>구현</th></tr></thead><tbody><tr><td>목표 1 · 번호 풍선 자동 배치 → 풍선 포함 PDF</td><td>후보 인식 → 번호 순서(줄 · 열 · 구역) → 겹치지 않는 자리 → 풍선 PDF · 엑셀. 원본 벡터를 그대로 두는 편집은 2단계</td></tr><tr><td>목표 2 · 풍선별 정보 엑셀</td><td>원 안 숫자 = 풍선, 지시선 끝 · 가까운 글자 연결, 치수 · 공차 · 기하공차 · 용접</td></tr><tr><td>형상만 있는 용접은 도형으로</td><td>용접 형상 그림(미리보기 · 그림 받기)과 엑셀에 잘라낼 영역 좌표</td></tr><tr><td>인식 일치율 85% 이상</td><td>필드 · 완전 일치율 측정. 새 도면 2종 목표 2 완전 일치율 45.5% → 97.2%(같은 도면으로 고치고 잰 숫자)</td></tr><tr><td>치수 기준서 / 용접 기준서 구분(2차)</td><td>기준서 구분(전체 · 치수 · 용접)별 번호 · 풍선 PDF · 엑셀</td></tr><tr><td>용접 기호 · 각장 · 부기(2차)</td><td>ISO 2553 기준선 찾기, 기준선 위 크기 글자, 단속, 용접 부기</td></tr><tr><td>「2x」 = 실측값 2개(3차)</td><td>기준서 엑셀에 측정값 칸을 개수만큼 비워 둠</td></tr><tr><td>회색 · 파란 한 줄 선 글꼴(3차)</td><td>선 토막을 글자로 묶어 직접 그린 선 글자표와 모양 맞추기</td></tr><tr><td>스캔 도면</td><td>2단계 — 글자가 없으면 알려 주고 멈춤(OCR 없음)</td></tr></tbody></table></div>
+</div>
+<div class="card plan-figs"><h2 style="margin-top:0">그림으로 보기</h2><figure><img src="docs/img/pipeline.png" alt="처리 흐름(파이프라인)" loading="lazy"><figcaption>처리 흐름(파이프라인)</figcaption></figure><figure><img src="docs/img/architecture.png" alt="구성(아키텍처)" loading="lazy"><figcaption>구성(아키텍처)</figcaption></figure><figure><img src="docs/img/wireframe-1.png" alt="와이어프레임 — 로그인 전 대문" loading="lazy"><figcaption>와이어프레임 — 로그인 전 대문</figcaption></figure><figure><img src="docs/img/wireframe-2.png" alt="와이어프레임 — 도면 열기 · 인식" loading="lazy"><figcaption>와이어프레임 — 도면 열기 · 인식</figcaption></figure><figure><img src="docs/img/wireframe-3.png" alt="와이어프레임 — 일치율 측정" loading="lazy"><figcaption>와이어프레임 — 일치율 측정</figcaption></figure><figure><img src="docs/img/screen.png" alt="실제 화면(예제 데이터)" loading="lazy"><figcaption>실제 화면(예제 데이터)</figcaption></figure></div>
+<div class="card"><h2 style="margin-top:0">개발일지</h2><h3>2026-11-10 · 최종 기획서 · 로그인</h3><ul><li>로그인 · 사용 신청 · 관리자 승인 키트 적용(표 data1003_members)</li><li>로그인 전 대문 — 과제 소개 · 핵심 기능 4 · 이렇게 씁니다</li><li>최종 기획서 v2.0 — 파이프라인 · 아키텍처 · 와이어프레임</li><li>README 의 사이트 주소를 새 과정 도메인으로 정리, 내 깃허브로 옮기는 안내서</li></ul><h3>2026-10-27 · 판 맞추기</h3><ul><li>index.html 의 모든 css · js 에 같은 판 질의, 판이 섞이면 새로고침 안내</li><li>scripts/bump-version.mjs, 판 확인 시험 추가(49개)</li></ul><h3>2026-10-21 · 3차 반영</h3><ul><li>새 도면 2종 + 사람이 쓴 기준서(치수 454 · 각장 362행)로 먼저 잼 — 처음 보는 도면 완전 일치율 45.5%</li><li>자간 넓힌 글 · 일반공차 · 한 줄 선 글꼴 · 선 기호 · 용접 기호 묶기 · 풍선 연결 보정 → 97.2%</li><li>기준서 양식 엑셀, 2x 측정값 칸, 가상 도면 E, 시험 48개</li></ul><h3>2026-10-21 · 2차 반영</h3><ul><li>실제 도면 2장(정답 537개) — 1차 도구 완전 일치율 3.0%(글자 층 없음)</li><li>윤곽선 글자를 모양으로 되읽기, 선 기호, 용접 기준선, 부기, 치수/용접 기준서 구분 → 90.5%</li><li>가상 도면 D, 시험 35개</li></ul><h3>2026-10-20 · 1단계</h3><ul><li>정답 대조 · 일치율 측정을 중심에 둔 도구</li><li>벡터 PDF 글자 층 규칙 인식, 목표 1 풍선 PDF, 목표 2 풍선 읽기</li><li>가상 도면 3종, 예시 일치율 97.4%, 시험 25개</li></ul></div>
+</div></main>
+<footer><div class="wrap">현장 데이터 디지털화 전문가과정 · 2차수 · 프로젝트 03 · 기획 황수용 · <a href="https://data10-00.jobability.co.kr/">2차수 프로젝트 모음</a></div></footer>
+</body>
+</html>
