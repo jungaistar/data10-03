@@ -8,6 +8,7 @@ window.AUTH_CONFIG = {
   "kakao": true,
   "idleMinutes": 30,
   "localBypass": true,
+  "board": true,
   "site": {
     "title": "검사 기준서 작성 자동화",
     "summary": "PDF 도면의 치수 · 공차 · 기하공차 · 용접 표기를 읽어 번호 풍선을 달거나 풍선별 정보를 기준서 양식 엑셀로 뽑고, 정답과 대조해 인식 일치율을 재는 도구입니다.",
